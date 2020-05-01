@@ -1,7 +1,7 @@
 # SIMPLE AIRCRAFT SCHEDULE
 I created this plane control schedule for fun.
 
-![GitHub Logo](/img.gif)
+![GitHub Logo](https://github.com/heyderpd/aircraft-schedule/blob/master/img.gif?raw=true)
 
 ## CONFIG
 Is very simple and bindable with back, using unix time for time slice.

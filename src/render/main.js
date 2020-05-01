@@ -9,16 +9,27 @@ const main = () => {
   stage.add(layer)
 
   const box = new Konva.Rect({
-      x: 50,
-      y: 50,
-      width: 100,
-      height: 50,
-      fill: '#00D2FF',
+      x: 0,
+      y: 0,
+      width: 200,
+      height: 80,
+      fill: '#e2e2e2',
       stroke: 'black',
-      strokeWidth: 4,
+      strokeWidth: 1,
+      draggable: true
+  })
+  const box2 = new Konva.Rect({
+      x: 200,
+      y: 0,
+      width: 200,
+      height: 80,
+      fill: '#e2e2e2',
+      stroke: 'black',
+      strokeWidth: 1,
       draggable: true
   })
   layer.add(box)
+  layer.add(box2)
 
   layer.draw()
 

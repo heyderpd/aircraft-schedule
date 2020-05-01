@@ -47,11 +47,11 @@ const times = [
   airCraftLine1, // etc
 ]
 
-//   first box [start fly time, end fly time, fly type], second box [start fly time, end fly time, fly type]
-const airCraftLine1 = [ [1588312800005, 1588334400005, 'normal'],            [1588507200005, 1588572000005, 'normal'], ],
+//          first box [start fly time, end fly time, fly type], second box [start fly time, end fly time, fly type]
+const airCraftLine1 = [ [1588312800005, 1588334400005, 'normal'],          [1588507200005, 1588572000005, 'normal'], ],
 
 // types
-normal -> normal fly
-empty -> empty leg fly
-out -> aircraft out off service
+'normal' -> normal fly
+'empty' -> empty leg fly
+'out' -> aircraft out off service
 ```

@@ -4,7 +4,7 @@ const box_width = 200
 const box_height = 80
 
 const box = offset => new Konva.Rect({
-  x: 0 + (offset * box_width),
+  x: (offset * box_width),
   y: 0,
   width: box_width,
   height: box_height,

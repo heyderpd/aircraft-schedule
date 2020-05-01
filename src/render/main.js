@@ -1,4 +1,5 @@
 import days from './days'
+import lines from './lines'
 
 const main = () => {
   const stage = new Konva.Stage({
@@ -14,6 +15,7 @@ const main = () => {
     num: [4, 5, 6, 7, 8],
     mark: 1,
   })
+  lines(layer, [])
 
   layer.draw()
 }

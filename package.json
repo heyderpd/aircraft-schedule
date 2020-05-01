@@ -6,7 +6,7 @@
   "scripts": {
     "clear": "rm -rf ./public/* ./disc/*",
     "static": "npm run clear && node src/index.js",
-    "transpile": "babel src/render --out-dir dist",
+    "transpile": "babel src/schedule --out-dir dist",
     "rollup": "rollup -c src/rollup.config.js",
     "build": "npm run clear && npm run static && npm run transpile && npm run rollup",
     "dev": "DEV=true npm run build && http-server",

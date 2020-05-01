@@ -19,7 +19,7 @@ const render = data => {
   layer.draw()
 }
 
-const main = () => {
+const main = data => {
   render(data)
   setInterval(() => render(data), 1000)
 }

@@ -1,9 +1,11 @@
-import { page_y_limit, box_height } from './config'
+import Konva from 'konva'
+
+import { page_x_limit, box_height } from './config'
 import { getNow } from './time'
 
 var line = offset => {
   return new Konva.Line({
-    points: [offset, box_height -10, offset, page_y_limit],
+    points: [offset, box_height -10, offset, page_x_limit],
     stroke: 'red',
     strokeWidth: 1,
   })

@@ -1,4 +1,6 @@
-import { page_y_limit, box_marge, box_height, line_height } from './config'
+import Konva from 'konva'
+
+import { page_x_limit, box_marge, box_height, line_height } from './config'
 import { range } from './utils'
 import { getNow, getTime } from './time'
 
@@ -44,7 +46,7 @@ const timeLine = (offset, now, data, [startT, endT, type]) => {
 var line = offset => {
   const off = box_height +(line_height *offset)
   return new Konva.Line({
-    points: [0, off, page_y_limit, off],
+    points: [0, off, page_x_limit, off],
     stroke: 'gray',
     strokeWidth: 1,
   })

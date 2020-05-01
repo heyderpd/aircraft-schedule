@@ -1,6 +1,6 @@
-export const page_y_limit = 1000
+export const page_x_limit = 1000
 
-export const page_x_limit = 380
+export const page_y_limit = 380
 
 export const box_width = 200
 

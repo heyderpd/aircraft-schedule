@@ -11,7 +11,7 @@ class ScheduleComponent extends Component {
 
   render () {
     main(this.state.data)
-    return <div id="schedule_canvas"></div>
+    return (<div id="schedule_canvas"></div>)
   }
 }
 

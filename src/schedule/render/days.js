@@ -1,4 +1,6 @@
-import { page_x_limit, box_width, box_height } from './config'
+import Konva from 'konva'
+
+import { page_y_limit, box_width, box_height } from './config'
 import { range } from './utils'
 import { getNow } from './time'
 
@@ -60,7 +62,7 @@ const circle = now => {
 var line = offset => {
   const off = (offset * box_width)
   return new Konva.Line({
-    points: [off, 0, off, page_x_limit],
+    points: [off, 0, off, page_y_limit],
     stroke: 'gray',
     strokeWidth: 1,
   })

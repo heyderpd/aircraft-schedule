@@ -17,7 +17,6 @@ const box = layer => offset => {
   const elms = [0, 6, 12, 18]
     .map((_t, _po) => {
       const off = (box_width /4 *_po) - box_width /2
-      console.log(77, { offset, off })
       return text(offset, _t, 12, off, 35)
     })
   elms.map(elm => layer.add(elm))
@@ -32,7 +31,6 @@ const getDay = now => {
 
 const text = (offset, text, size=20, move_x=0, move_y=0, bold=false, now=null) => {
   const off = getDay(now)
-  console.log({ offset, off })
   const color = offset == off ? 'white' : 'black'
   const elm = new Konva.Text({
     x: (box_width /2) +(offset *box_width) +move_x,

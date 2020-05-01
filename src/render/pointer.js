@@ -19,7 +19,6 @@ const circle = offset => new Konva.Circle({
 
 const pointer = (layer, data) => {
   const now = getNow(data)
-  console.log({now})
   layer.add(line(now))
   layer.add(circle(now))
 }

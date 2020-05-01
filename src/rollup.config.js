@@ -3,13 +3,12 @@ import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import { minify } from 'uglify-es'
 import uglify from 'rollup-plugin-uglify'
-
 const is_dev = process.env.DEV === 'true'
 
 export default {
-  entry: 'dist/index.js',
+  entry: 'dist/example/index.js',
   dest: 'public/index.js',
-  moduleName: 'render',
+  moduleName: 'aircraft-schedule',
   format: 'iife',
   plugins: [
     babel({

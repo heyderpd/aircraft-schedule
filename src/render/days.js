@@ -30,13 +30,16 @@ const text = (offset, text, move_width=0) => {
   return elm
 }
 
-const circle = offset => new Konva.Circle({
-  x: (box_width /2) + (offset *box_width),
-  y: box_height/2 +10,
-  radius: box_height /6,
-  stroke: 'gray',
-  strokeWidth: 4,
-})
+const circle = now => {
+  const offset = (now -(now %box_width)) /box_width
+  return new Konva.Circle({
+    x: (box_width /2) + (offset *box_width),
+    y: box_height/2 +10,
+    radius: box_height /6,
+    stroke: 'gray',
+    strokeWidth: 4,
+  })
+}
 
 var line = offset => {
   const off = (offset * box_width)
@@ -47,14 +50,14 @@ var line = offset => {
   })
 }
 
-const days = (layer, { day, num, mark }) => {
+const days = (layer, { day, num, now }) => {
   range(6)
     .map(line)
     .map(elm => layer.add(elm))
   range(5)
     .map(box)
     .map(elm => layer.add(elm))
-  layer.add(circle(mark))
+  layer.add(circle(now))
   range(5)
     .map(offset => text(offset, day[offset], -10))
     .map(elm => layer.add(elm))

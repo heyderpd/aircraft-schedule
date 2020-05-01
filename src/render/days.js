@@ -1,6 +1,6 @@
 import { range } from './utils'
 
-const page_limit = 380
+const page_x_limit = 380
 const box_width = 200
 const box_height = 80
 
@@ -41,7 +41,7 @@ const circle = offset => new Konva.Circle({
 var line = offset => {
   const off = (offset * box_width)
   return new Konva.Line({
-    points: [off, 0, off, page_limit],
+    points: [off, 0, off, page_x_limit],
     stroke: 'gray',
     strokeWidth: 1,
   })

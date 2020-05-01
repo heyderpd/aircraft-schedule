@@ -3,6 +3,24 @@ I created this plane control schedule for fun.
 
 ![GitHub Logo](https://github.com/heyderpd/aircraft-schedule/blob/master/img.gif?raw=true)
 
+## REACT USE
+```javascript
+import ScheduleComponent from 'aircraft-schedule'
+
+<ScheduleComponent data={data} />
+```
+
+## OTHER FRAMEWORKS USE
+```javascript
+import { render } from 'aircraft-schedule'
+
+// js side, only one time on screen started
+render(data)
+
+// html side
+<div id="schedule_canvas"></div>
+```
+
 ## CONFIG
 Is very simple and bindable with back, using unix time for time slice.
 ```javascript
@@ -21,20 +39,19 @@ const data = {
 }
 ```
 
-## REACT USE
+## EXPLAINING TIME SLICE
 ```javascript
-import ScheduleComponent from 'aircraft-schedule'
+const times = [
+  airCraftLine1, // first line
+  airCraftLine1, // second line
+  airCraftLine1, // etc
+]
 
-<ScheduleComponent data={data} />
-```
+//   first box [start fly time, end fly time, fly type], second box [start fly time, end fly time, fly type]
+const airCraftLine1 = [ [1588312800005, 1588334400005, 'normal'],            [1588507200005, 1588572000005, 'normal'], ],
 
-## OTHER FRAMEWORKS USE
-```javascript
-import { render } from 'aircraft-schedule'
-
-// js side, only one time on screen started
-render(data)
-
-// html side
-<div id="schedule_canvas"></div>
+// types
+normal -> normal fly
+empty -> empty leg fly
+out -> aircraft out off service
 ```

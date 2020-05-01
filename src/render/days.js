@@ -37,7 +37,19 @@ const circle = offset => new Konva.Circle({
   strokeWidth: 4,
 })
 
+var line = offset => {
+  const off = (offset * box_width)
+  return new Konva.Line({
+    points: [0 +off, 0, 0 +off, 380],
+    stroke: 'gray',
+    strokeWidth: 1,
+  })
+}
+
 const days = (layer, data) => {
+  range(6)
+    .map(line)
+    .map(elm => layer.add(elm))
   range(5)
     .map(box)
     .map(elm => layer.add(elm))

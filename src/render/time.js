@@ -1,9 +1,15 @@
 import { page_y_limit } from './config'
 
+const fakeStartTime = new Date().getTime()
 export const getNow = data => {
-  // change to: new Date().getTime()
-  const now = 1588435200005 //2020-05-02T16:00:00.005Z
+  const now = new Date().getTime()
+  /* //change to
   return convertTimeToSchedule(now, data)
+  */
+
+  const timeDiff = (now -fakeStartTime) *3000
+  const fakeNow = 1588435200005 //2020-05-02T16:00:00.005Z
+  return convertTimeToSchedule(fakeNow +timeDiff, data)
 }
 
 export const convertTimeToSchedule = (time, { schedule_start, schedule_end }) => {

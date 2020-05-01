@@ -2,7 +2,7 @@ import days from './days'
 import lines from './lines'
 import pointer from './pointer'
 
-const main = () => {
+const render = () => {
   const data = {
     day: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
     num: [4, 5, 6, 7, 8],
@@ -31,6 +31,11 @@ const main = () => {
   pointer(layer, data)
 
   layer.draw()
+}
+
+const main = () => {
+  render()
+  setInterval(render, 1000)
 }
 
 export default main

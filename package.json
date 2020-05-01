@@ -9,7 +9,7 @@
     "transpile": "babel src/render --out-dir dist",
     "rollup": "rollup -c src/rollup.config.js",
     "build": "npm run clear && npm run static && npm run transpile && npm run rollup",
-    "server-dev": "DEV=true npm run build-dev && http-server",
+    "dev": "DEV=true npm run build && http-server",
     "server": "npm run build-dev && http-server"
   },
   "keywords": [],

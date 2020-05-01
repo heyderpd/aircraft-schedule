@@ -1,6 +1,6 @@
 {
   "name": "aircraft-schedule",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "",
   "main": "schedule/index.js",
   "scripts": {
@@ -12,7 +12,13 @@
     "dev": "DEV=true npm run build && http-server",
     "server": "npm run build-dev && http-server"
   },
-  "keywords": [],
+  "keywords": [
+    "konva",
+    "canvas",
+    "schedule",
+    "aircraft",
+    "management"
+  ],
   "author": "heyder dias",
   "license": "MIT",
   "devDependencies": {

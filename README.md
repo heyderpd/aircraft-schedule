@@ -1,7 +1,7 @@
 # SIMPLE AIRCRAFT SCHEDULE
 I created this plane control schedule for fun.
 
-![GitHub Logo](https://github.com/heyderpd/aircraft-schedule/blob/master/img.gif?raw=true)
+![GitHub Logo](https://raw.githubusercontent.com/heyderpd/aircraft-schedule/master/img.gif)
 
 ## REACT USE
 ```javascript

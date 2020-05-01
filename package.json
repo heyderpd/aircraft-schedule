@@ -2,7 +2,7 @@
   "name": "front",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "schedule/render/component.js",
   "scripts": {
     "clear": "rm -rf ./public/* ./disc/*",
     "static": "npm run clear && node src/index.js",

@@ -1,9 +1,7 @@
-import { range } from './utils'
+import { page_y_limit, box_marge, box_height, line_height } from './config'
 
-const page_y_limit = 1000
-const box_marge = 3
-const box_height = 80
-const line_height = 59
+import { range } from './utils'
+import { getNow, getTime } from './time'
 
 const colors_old = '#e6c893'
 const colors_now = '#7fb261'
@@ -30,7 +28,8 @@ const getColor = (now, start, end, type) => {
   return color
 }
 
-const timeLine = (offset, now, [start, end, type]) => {
+const timeLine = (offset, now, data, [startT, endT, type]) => {
+  const { start, end } = getTime(startT, endT, data)
   const color = getColor(now, start, end, type)
   return new Konva.Rect({
     x: start,
@@ -52,18 +51,20 @@ var line = offset => {
   })
 }
 
-const processLine = (layer, now) => (items, offset) => {
+const processLine = (layer, now, data) => (items, offset) => {
   items
-    .map(box => timeLine(offset, now, box))
+    .map(box => timeLine(offset, now, data, box))
     .map(elm => layer.add(elm))
 }
 
-const lines = (layer, { times, now }) => {
+const lines = (layer, data) => {
+  const now = getNow(data)
+  const { times } = data
   range(times.length)
     .map(line)
     .map(elm => layer.add(elm))
   times
-    .map(processLine(layer, now))
+    .map(processLine(layer, now, data))
 }
 
 export default lines

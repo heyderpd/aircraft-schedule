@@ -9,7 +9,11 @@ const main = () => {
   const layer = new Konva.Layer()
   stage.add(layer)
 
-  days(layer)
+  days(layer, {
+    day: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+    num: [4, 5, 6, 7, 8],
+    mark: 1,
+  })
 
   layer.draw()
 }

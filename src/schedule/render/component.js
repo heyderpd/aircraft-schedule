@@ -15,6 +15,4 @@ class ScheduleComponent extends Component {
   }
 }
 
-export const render = main
-
 export default ScheduleComponent

@@ -17,9 +17,9 @@ const circle = offset => new Konva.Circle({
   strokeWidth: 4,
 })
 
-const pointer = (layer, position) => {
-  layer.add(line(position))
-  layer.add(circle(position))
+const pointer = (layer, { now }) => {
+  layer.add(line(now))
+  layer.add(circle(now))
 }
 
 export default pointer

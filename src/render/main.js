@@ -3,6 +3,14 @@ import lines from './lines'
 import pointer from './pointer'
 
 const main = () => {
+  const data = {
+    day: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+    num: [4, 5, 6, 7, 8],
+    mark: 1,
+    times: [],
+    now: 280,
+  }
+
   const canvas = document.getElementById('canvas')
   const stage = new Konva.Stage({
     container: 'canvas',
@@ -12,13 +20,9 @@ const main = () => {
   const layer = new Konva.Layer()
   stage.add(layer)
 
-  days(layer, {
-    day: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-    num: [4, 5, 6, 7, 8],
-    mark: 1,
-  })
-  lines(layer, [])
-  pointer(layer, 280)
+  days(layer, data)
+  lines(layer, data)
+  pointer(layer, data)
 
   layer.draw()
 }

@@ -47,19 +47,19 @@ var line = offset => {
   })
 }
 
-const days = (layer, data) => {
+const days = (layer, { day, num, mark }) => {
   range(6)
     .map(line)
     .map(elm => layer.add(elm))
   range(5)
     .map(box)
     .map(elm => layer.add(elm))
-  layer.add(circle(data.mark))
+  layer.add(circle(mark))
   range(5)
-    .map(offset => text(offset, data.day[offset], -10))
+    .map(offset => text(offset, day[offset], -10))
     .map(elm => layer.add(elm))
   range(5)
-    .map(offset => text(offset, data.num[offset], 10))
+    .map(offset => text(offset, num[offset], 10))
     .map(elm => layer.add(elm))
 }
 

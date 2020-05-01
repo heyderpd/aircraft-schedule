@@ -6,7 +6,7 @@
 #app {
   display: flex;
   flex-direction: row;
-  height: 355px;
+  height: 375px;
 }
 
 .column {
@@ -37,7 +37,8 @@ span {
 }
 
 #canvas {
+  min-width: 1000px;
+  max-width: 1000px;
   width: 100%;
-  min-width: 380px;
-  max-width: 380px;
+  height: 100%;
 }

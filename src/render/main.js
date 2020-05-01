@@ -1,11 +1,13 @@
 import days from './days'
 import lines from './lines'
+import pointer from './pointer'
 
 const main = () => {
+  const canvas = document.getElementById('canvas')
   const stage = new Konva.Stage({
-    container: 'container',
-    width: window.innerWidth,
-    height: window.innerHeight
+    container: 'canvas',
+    width: canvas.offsetWidth,
+    height: canvas.offsetHeight
   })
   const layer = new Konva.Layer()
   stage.add(layer)
@@ -16,6 +18,7 @@ const main = () => {
     mark: 1,
   })
   lines(layer, [])
+  pointer(layer, 280)
 
   layer.draw()
 }

@@ -1,13 +1,16 @@
+import { page_x_limit, page_y_limit } from './config'
 import days from './days'
 import lines from './lines'
 import pointer from './pointer'
 
+const canvasId = 'schedule_canvas'
+
 const render = data => {
-  const canvas = document.getElementById('canvas')
+  const canvas = document.getElementById(canvasId)
   const stage = new Konva.Stage({
-    container: 'canvas',
-    width: canvas.offsetWidth,
-    height: canvas.offsetHeight
+    container: canvasId,
+    width: page_x_limit,
+    height: page_y_limit
   })
   const layer = new Konva.Layer()
   stage.add(layer)

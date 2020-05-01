@@ -19,16 +19,20 @@ const timeLine = (offset, [start, end, type], now) => {
   return new Konva.Rect({
     x: start,
     y: box_height + (offset * line_height),
-    width: end,
+    width: end -start,
     height: line_height,
-    fill: 'red',
+    fill: colors[type],
     strokeWidth: 1,
     draggable: false,
   })
 }
 
 const lines = (layer, data) => {
-  layer.add(timeLine(2, [50, 100, 'old'], 70))
+  layer.add(timeLine(2, [180, 200, 'old'], 70))
+  layer.add(timeLine(2, [240, 290, 'now'], 70))
+  layer.add(timeLine(2, [350, 400, 'future'], 70))
+  layer.add(timeLine(2, [420, 450, 'empty'], 70))
+  layer.add(timeLine(2, [500, 520, 'out'], 70))
 }
 
 export default lines

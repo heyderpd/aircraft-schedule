@@ -4,14 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clear": "babel src/render --out-dir dist",
-    "transpile": "npm run clear && babel src/render --out-dir dist",
+    "clear": "rm -rf ./public/* ./disc/*",
+    "static": "npm run clear && node src/index.js",
+    "transpile": "babel src/render --out-dir dist",
     "rollup": "rollup -c src/rollup.config.js",
-    "copy": "node src/index.js",
-    "build": "npm run transpile && npm run rollup && npm run copy",
-    "build-dev": "DEV=true npm run build",
-    "server-dev": "npm run build-dev && http-server",
-    "server": "http-server"
+    "build": "npm run clear && npm run static && npm run transpile && npm run rollup",
+    "server-dev": "DEV=true npm run build-dev && http-server",
+    "server": "npm run build-dev && http-server"
   },
   "keywords": [],
   "author": "heyder dias",

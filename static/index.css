@@ -4,7 +4,31 @@
 }
 
 #app {
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  height: 355px;
+}
+
+.column {
+  min-width: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  background-color: #9e9e9e2e;
+}
+
+.column > * {
+  display: flex;
+  flex-direction: column;
+}
+
+span {
+  padding: 20px;
+  border: 1px solid #9E9E9E;
+  border-left: none;
+  border-top: none;
 }
 
 #canvas {

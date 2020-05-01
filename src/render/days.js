@@ -1,8 +1,6 @@
+import { page_x_limit, box_width, box_height } from './config'
 import { range } from './utils'
-
-const page_x_limit = 380
-const box_width = 200
-const box_height = 80
+import { getNow } from './time'
 
 const box = offset => new Konva.Rect({
   x: (offset * box_width),
@@ -50,7 +48,10 @@ var line = offset => {
   })
 }
 
-const days = (layer, { day, num, now }) => {
+const days = (layer, data) => {
+  const { day, num } = data
+  const now = getNow(data)
+
   range(6)
     .map(line)
     .map(elm => layer.add(elm))
